@@ -5,7 +5,7 @@ from torch import Tensor
 import torch.nn.functional as F
 import matplotlib.pyplot as plt
 import streamlit as st
-from sklearn.preprocessing import StandardScaler
+#from sklearn.preprocessing import StandardScaler
 import pandas as pd
 #from MLP import MLP
 import math
