@@ -14,7 +14,7 @@ from PIL import Image
 image = Image.open('logos.png')
 st.image(image)
 
-st.title('Region Specific Lane Distribution Factor')
+st.title('Region-Specific Lane Distribution Factor')
 
 region = st.selectbox('Select region', ['Atlanta/Macon','Savannah','Other Regions'])
 
