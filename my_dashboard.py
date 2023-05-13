@@ -21,10 +21,22 @@ area = st.selectbox('Select area type', ["Urban", "Rural"])
 facility = st.selectbox('Select facility type', ["Interstate, Other Freeways or Expressways", "Others"])
 num_lanes = st.selectbox('Select the number of lanes (directional)', ["2", "3+"])
 
-if area == "Urban":
+if region =='Atlanta/Macon':
+    Atl = 1.0
+    Sav = 0.0
+    Urban = 1.0
+elif region =='Savannah':
+    Sav = 1.0
+    Atl = 0.0
     Urban = 1.0
 else:
-    Urban = 0.0
+    Atl = 0.0
+    Sav = 0.0
+
+    if area == "Urban":
+        Urban = 1.0
+    else:
+        Urban = 0.0
 
 if facility == "Interstate, Other Freeways or Expressways":
     IS = 1.0
@@ -36,15 +48,6 @@ if num_lanes =="2":
 else:
     LN = 1.0
 
-if region =='Atlanta/Macon':
-    Atl = 1.0
-    Sav = 0.0
-elif region =='Savannah':
-    Sav = 1.0
-    Atl = 0.0
-else:
-    Atl = 0.0
-    Sav = 0.0
     
 warning = '<p style="font-family:sans-serif; color:Red; font-size: 32px;">Extrapolated LDF values, use with caution.</p>'
 
