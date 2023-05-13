@@ -17,9 +17,6 @@ st.image(image)
 st.title('Region Specific Lane Distribution Factor')
 
 region = st.selectbox('Select region', ['Atlanta/Macon','Savannah','Other Regions'])
-area = st.selectbox('Select area type', ["Urban", "Rural"])
-facility = st.selectbox('Select facility type', ["Interstate, Other Freeways or Expressways", "Others"])
-num_lanes = st.selectbox('Select the number of lanes (directional)', ["2", "3+"])
 
 if region =='Atlanta/Macon':
     Atl = 1.0
@@ -32,11 +29,15 @@ elif region =='Savannah':
 else:
     Atl = 0.0
     Sav = 0.0
+    area = st.selectbox('Select area type', ["Urban", "Rural"])
 
     if area == "Urban":
         Urban = 1.0
     else:
         Urban = 0.0
+
+facility = st.selectbox('Select facility type', ["Interstate, Other Freeways or Expressways", "Others"])
+num_lanes = st.selectbox('Select the number of lanes (directional)', ["2", "3+"])
 
 if facility == "Interstate, Other Freeways or Expressways":
     IS = 1.0
