@@ -95,14 +95,14 @@ c5 = df["Interstate"][1]
 
 
 bx = b0 + b1*(truck/100) + b2*math.log(aadt) + b3*Urban + b4*Atl  + b5*Sav + b6*IS + b7*LN
-ldf_outer = 1/(1+ math.exp(-bx))
+ldf_outer = round(1/(1+ math.exp(-bx)),2)
 
 # only for 3+ directional lanes
 if LN == 0.0:
     ldf_inner = 1.0 - ldf_outer
 else:
     cx = c0 + c1*(truck/100) + c2*math.log(aadt) + c3*Atl + c4*Sav + c5*IS
-    ldf_center = (1/(1.0 + math.exp(-cx)))*(1.0-ldf_outer)
+    ldf_center = round((1/(1.0 + math.exp(-cx)))*(1.0-ldf_outer),2)
     ldf_inner = 1.0-ldf_center-ldf_outer
 
 # Plot LDF
